@@ -1,0 +1,24 @@
+{
+  "name": "fsd-cse-13",
+  "version": "1.0.0",
+  "description": "npm: node package manager\r this is used to install run , uninstall any program/project and ackage\r -npm install <packageName>\r -npm uninstall <packageName>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhishek1231331/CSE-13-FSD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/abhishek1231331/CSE-13-FSD/issues"
+  },
+  "homepage": "https://github.com/abhishek1231331/CSE-13-FSD#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

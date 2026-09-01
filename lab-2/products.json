@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": 12,
+    "name": "hp-victus",
+    "price": 600000,
+    "qty": 1
+  },
+  {
+    "id": 120,
+    "name": "samsung s26 ultra",
+    "price": 96000,
+    "qty": 1
+  },
+  {
+    "id": 130,
+    "name": "I phone",
+    "price": 150000,
+    "qty": 1
+  }
+]

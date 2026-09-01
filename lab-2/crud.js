@@ -18,6 +18,7 @@ const addToCart = async (item) => {
   const products = await getCart();
   products.push(item);
   await saveCart(products);
+
 };
 
 const showCart = async (showCart) => {
