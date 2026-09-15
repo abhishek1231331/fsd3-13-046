@@ -4,7 +4,8 @@
   "description": "npm: node package manager\r this is used to install run , uninstall any program/project and ackage\r -npm install <packageName>\r -npm uninstall <packageName>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node app.js",
+    "dev":"nodemon prg4.js"
   },
   "repository": {
     "type": "git",
