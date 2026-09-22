@@ -1,24 +1,16 @@
 {
-  "name": "fsd-cse-13",
+  "name": "lab3",
   "version": "1.0.0",
-  "description": "npm: node package manager\r this is used to install run , uninstall any program/project and ackage\r -npm install <packageName>\r -npm uninstall <packageName>",
-  "main": "index.js",
+  "description": "localhost - URL\r 127.0.0.1 - IP address",
+  "main": "prg1.js",
   "scripts": {
     "start":"node app.js",
-    "dev":"nodemon prg4.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/abhishek1231331/CSE-13-FSD.git"
+    "dev":"nodemon prg6.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
-  "bugs": {
-    "url": "https://github.com/abhishek1231331/CSE-13-FSD/issues"
-  },
-  "homepage": "https://github.com/abhishek1231331/CSE-13-FSD#readme",
   "devDependencies": {
     "nodemon": "^3.1.14"
   }
