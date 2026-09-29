@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex One Ultra | The Next Era of Mobile Innovation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#00f2fe',
+                            purple: '#4facfe',
+                            accent: '#7928CA',
+                            neon: '#FF0080',
+                            dark: '#0a0a0f',
+                            card: 'rgba(255, 255, 255, 0.03)',
+                            border: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 4s infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%': { opacity: '0.4', filter: 'blur(40px)' },
+                            '100%': { opacity: '0.8', filter: 'blur(60px)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(1deg)' },
+                        },
+                        shimmer: {
+                            '100%': { transform: 'translateX(100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #050508;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(18, 18, 26, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 242, 254, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.15);
+            transform: translateY(-4px);
+        }
+
+        /* Custom gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #FF0080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-subtle {
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Phone Mockup Styles */
+        .phone-body {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 242, 254, 0.2);
+        }
+
+        /* Hide scrollbars for slick slider components */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-200">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="glass-panel rounded-2xl px-6 py-3 flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-purple-600 flex items-center justify-center font-bold text-white shadow-lg shadow-cyan-500/30 group-hover:scale-105 transition-transform">
+                        A
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-white">APEX<span class="gradient-text">ONE</span></span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                    <a href="#overview" class="hover:text-cyan-400 transition-colors">Overview</a>
+                    <a href="#features" class="hover:text-cyan-400 transition-colors">Features</a>
+                    <a href="#specs" class="hover:text-cyan-400 transition-colors">Specs</a>
+                    <a href="#reviews" class="hover:text-cyan-400 transition-colors">Reviews</a>
+                    <a href="#pricing" class="hover:text-cyan-400 transition-colors">Pricing</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="flex items-center space-x-4">
+                    <button onclick="openPreOrderModal()" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-xl group bg-gradient-to-br from-cyan-500 to-purple-600 group-hover:from-cyan-500 group-hover:to-purple-600 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-cyan-800 shadow-lg shadow-cyan-500/20">
+                        <span class="relative px-5 py-2 transition-all ease-in duration-75 bg-gray-950 rounded-[10px] group-hover:bg-opacity-0 font-semibold">
+                            Pre-Order Now
+                        </span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="hidden md:hidden glass-panel mt-2 rounded-2xl p-4 flex flex-col space-y-3">
+                <a href="#overview" class="mobile-nav-link text-gray-300 hover:text-cyan-400 py-2 px-3 rounded-lg hover:bg-white/5">Overview</a>
+                <a href="#features" class="mobile-nav-link text-gray-300 hover:text-cyan-400 py-2 px-3 rounded-lg hover:bg-white/5">Features</a>
+                <a href="#specs" class="mobile-nav-link text-gray-300 hover:text-cyan-400 py-2 px-3 rounded-lg hover:bg-white/5">Specs</a>
+                <a href="#reviews" class="mobile-nav-link text-gray-300 hover:text-cyan-400 py-2 px-3 rounded-lg hover:bg-white/5">Reviews</a>
+                <a href="#pricing" class="mobile-nav-link text-gray-300 hover:text-cyan-400 py-2 px-3 rounded-lg hover:bg-white/5">Pricing</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="overview" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <!-- Glowing Background Orbs -->
+        <div id="glow-orb" class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/20 rounded-full animate-pulse-glow pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left: Text Copy -->
+                <div class="lg:col-span-6 text-center lg:text-left space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-xs font-semibold tracking-wide uppercase text-cyan-300 border-cyan-500/30">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        Introducing Flagship 2026 Generation
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                        Beyond <br class="hidden sm:inline"/>
+                        <span class="gradient-text">Speed & Vision.</span>
+                    </h1>
+
+                    <p class="text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Engineered with aerospace-grade titanium, powered by the revolutionary Quantum-3nm chip, and armed with a 200MP Quad-Pro camera. Experience tomorrow today.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <button onclick="openPreOrderModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-base hover:shadow-lg hover:shadow-cyan-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                            <span>Pre-Order From $999</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </button>
+                        <a href="#features" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white font-semibold text-base hover:bg-white/10 transition-all flex items-center justify-center gap-2 border border-white/10">
+                            <i class="fa-solid fa-circle-play text-cyan-400"></i>
+                            <span>Explore Features</span>
+                        </a>
+                    </div>
+
+                    <!-- Mini Highlights Badges -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/10 max-w-lg mx-auto lg:mx-0 text-center sm:text-left">
+                        <div>
+                            <div class="text-2xl font-bold text-white">200 MP</div>
+                            <div class="text-xs text-gray-400">Ultra-Vision Sensor</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">3nm</div>
+                            <div class="text-xs text-gray-400">Bionic Apex Chip</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">120W</div>
+                            <div class="text-xs text-gray-400">HyperCharge 0-100%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Interactive 3D Mockup Visualizer -->
+                <div class="lg:col-span-6 flex flex-col items-center justify-center">
+                    <div class="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[9/18] rounded-[50px] p-3 border-4 border-gray-800 bg-gray-950 phone-body animate-float relative" id="phone-visualizer">
+                        
+                        <!-- Phone Outer Frame Accents -->
+                        <div class="absolute inset-0 rounded-[46px] border border-white/10 pointer-events-none"></div>
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-5 bg-black rounded-b-2xl z-30 flex items-center justify-center">
+                            <!-- Dynamic Island / Speaker Notch -->
+                            <div class="w-12 h-3 bg-gray-900 rounded-full flex items-center justify-end px-1.5">
+                                <div class="w-2 h-2 rounded-full bg-blue-900/60 border border-blue-400/40"></div>
+                            </div>
+                        </div>
+
+                        <!-- Phone Screen Display Canvas -->
+                        <div class="w-full h-full rounded-[40px] overflow-hidden relative bg-gray-900 flex flex-col justify-between p-6 border border-white/5" id="phone-screen">
+                            
+                            <!-- Screen Gradient Background -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-900/40 via-gray-950 to-purple-950/50 z-0 transition-all duration-700" id="phone-screen-bg"></div>
+                            
+                            <!-- Screen UI Header -->
+                            <div class="relative z-10 flex justify-between items-center text-xs text-gray-300 pt-2 px-2">
+                                <span class="font-semibold">09:41</span>
+                                <div class="flex items-center space-x-1 text-xs">
+                                    <i class="fa-solid fa-signal"></i>
+                                    <span class="font-bold">5G</span>
+                                    <i class="fa-solid fa-battery-full text-cyan-400"></i>
+                                </div>
+                            </div>
+
+                            <!-- Screen Interactive Graphic Center -->
+                            <div class="relative z-10 my-auto text-center space-y-4">
+                                <div class="w-24 h-24 mx-auto rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-4xl shadow-2xl text-cyan-400 transform hover:scale-110 transition-transform cursor-pointer" id="phone-core-icon">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase tracking-widest text-cyan-400 font-bold" id="phone-color-label">Cyber Teal Edition</p>
+                                    <h3 class="text-xl font-black text-white tracking-wide">APEX ONE</h3>
+                                </div>
+                                <div class="inline-block bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-gray-300 font-mono">
+                                    ProMotion 120Hz Active
+                                </div>
+                            </div>
+
+                            <!-- Screen UI Footer Widgets -->
+                            <div class="relative z-10 grid grid-cols-2 gap-2 text-left">
+                                <div class="p-3 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10">
+                                    <i class="fa-solid fa-camera text-cyan-400 text-xs mb-1"></i>
+                                    <div class="text-[10px] font-bold text-white">200MP Matrix</div>
+                                    <div class="text-[8px] text-gray-400">8K Cinema Mode</div>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10">
+                                    <i class="fa-solid fa-bolt text-purple-400 text-xs mb-1"></i>
+                                    <div class="text-[10px] font-bold text-white">120W Fast</div>
+                                    <div class="text-[8px] text-gray-400">100% in 18 mins</div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Home Bar -->
+                            <div class="relative z-10 w-32 h-1 bg-white/40 rounded-full mx-auto mt-2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Color Selector Toolbar -->
+                    <div class="mt-8 glass-panel px-6 py-3 rounded-full flex items-center gap-4 border border-white/10 shadow-2xl">
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Finish:</span>
+                        <div class="flex items-center gap-3">
+                            <button onclick="changePhoneColor('teal')" title="Cyber Teal" class="color-btn w-7 h-7 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-600 ring-2 ring-offset-2 ring-offset-gray-950 ring-cyan-400 hover:scale-110 transition-transform" data-color="teal"></button>
+                            <button onclick="changePhoneColor('purple')" title="Phantom Violet" class="color-btn w-7 h-7 rounded-full bg-gradient-to-tr from-purple-500 to-pink-600 hover:scale-110 transition-transform" data-color="purple"></button>
+                            <button onclick="changePhoneColor('gold')" title="Solar Gold" class="color-btn w-7 h-7 rounded-full bg-gradient-to-tr from-amber-400 to-orange-500 hover:scale-110 transition-transform" data-color="gold"></button>
+                            <button onclick="changePhoneColor('stealth')" title="Stealth Obsidian" class="color-btn w-7 h-7 rounded-full bg-gradient-to-tr from-gray-700 to-gray-900 hover:scale-110 transition-transform" data-color="stealth"></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Highlights Section -->
+    <section id="features" class="py-24 relative z-10 bg-black/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Engineered Perfection</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Revolutionary Features. Zero Compromise.</p>
+            </div>
+
+            <!-- Tab Navigation Buttons -->
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex p-1.5 rounded-2xl glass-panel border border-white/10 max-w-full overflow-x-auto no-scrollbar">
+                    <button onclick="switchTab('tab-camera')" id="btn-tab-camera" class="feature-tab-btn px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 text-white bg-cyan-500/20 border border-cyan-500/40 shadow-lg">
+                        <i class="fa-solid fa-camera mr-2"></i>200MP Camera
+                    </button>
+                    <button onclick="switchTab('tab-performance')" id="btn-tab-performance" class="feature-tab-btn px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 text-gray-400 hover:text-white">
+                        <i class="fa-solid fa-microchip mr-2"></i>3nm Processor
+                    </button>
+                    <button onclick="switchTab('tab-display')" id="btn-tab-display" class="feature-tab-btn px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 text-gray-400 hover:text-white">
+                        <i class="fa-solid fa-mobile-screen mr-2"></i>ProMotion OLED
+                    </button>
+                    <button onclick="switchTab('tab-battery')" id="btn-tab-battery" class="feature-tab-btn px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 text-gray-400 hover:text-white">
+                        <i class="fa-solid fa-charging-station mr-2"></i>120W Battery
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content Display Grid -->
+            <div id="feature-tabs-container">
+                
+                <!-- Tab 1: Camera -->
+                <div id="tab-camera" class="feature-tab-content grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-6 glass-card rounded-3xl p-8 sm:p-10 space-y-6">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-aperture"></i>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-white">Quad-Matrix Optics with Quantum HDR</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Capture staggering clarity with our primary 200MP sensor. Combined with periscope 10x optical zoom and hardware-accelerated Night Vision AI, every shot looks like a cinematic masterpiece.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 200MP Main Sensor with f/1.4 Ultra-Aperture</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 8K Cinematic Video Recording at 60 FPS</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 100x Digital SuperZoom & AI Stabilization</li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-6 glass-card rounded-3xl p-6 min-h-[350px] flex flex-col justify-center items-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-cyan-950/60 to-purple-950/40 z-0"></div>
+                        <i class="fa-solid fa-camera-retro text-9xl text-cyan-400/20 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="relative z-10 text-center space-y-2 mt-4">
+                            <span class="text-2xl font-bold text-white">Light Capture Engine 3.0</span>
+                            <p class="text-xs text-gray-400 max-w-sm">400% more light sensitivity for low-light nightscapes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Performance -->
+                <div id="tab-performance" class="feature-tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-6 glass-card rounded-3xl p-8 sm:p-10 space-y-6">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-white">Quantum Bionic 3nm Architecture</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Experience console-level gaming and effortless neural processing. Built on an advanced 3nm fabrication process, achieving 45% faster CPU speeds with 30% greater power efficiency.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400"></i> 8-Core CPU + 10-Core Ray-Tracing GPU</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400"></i> Dedicated 16-Core Neural Engine for On-Device AI</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400"></i> Up to 24GB LPDDR5X Ultra RAM</li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-6 glass-card rounded-3xl p-6 min-h-[350px] flex flex-col justify-center items-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-purple-950/60 to-blue-950/40 z-0"></div>
+                        <i class="fa-solid fa-microchip text-9xl text-purple-400/20 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="relative z-10 text-center space-y-2 mt-4">
+                            <span class="text-2xl font-bold text-white">Real-Time Ray Tracing</span>
+                            <p class="text-xs text-gray-400 max-w-sm">Silky 120 FPS mobile gaming without thermal throttling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Display -->
+                <div id="tab-display" class="feature-tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-6 glass-card rounded-3xl p-8 sm:p-10 space-y-6">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-tv"></i>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-white">6.8" Super Retina ProMotion LTPO OLED</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Witness fluid movement and breathtaking colors. Dynamic refresh rate shifts effortlessly from 1Hz to 120Hz to preserve battery, while peak 3500 nits brightness guarantees outdoor visibility.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400"></i> 3200 x 1440 WQHD+ Resolution (516 ppi)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400"></i> Dolby Vision & HDR10+ Adaptive Color</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-amber-400"></i> Ceramic Diamond Shield Scratch Resistance</li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-6 glass-card rounded-3xl p-6 min-h-[350px] flex flex-col justify-center items-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-amber-950/40 to-cyan-950/40 z-0"></div>
+                        <i class="fa-solid fa-[#00f2fe] fa-display text-9xl text-amber-400/20 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="relative z-10 text-center space-y-2 mt-4">
+                            <span class="text-2xl font-bold text-white">3500 Nits Peak Brightness</span>
+                            <p class="text-xs text-gray-400 max-w-sm">Ultra-vibrant contrast even under direct sunlight.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Battery -->
+                <div id="tab-battery" class="feature-tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-6 glass-card rounded-3xl p-8 sm:p-10 space-y-6">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-battery-charging"></i>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-white">5500mAh Solid-State Cell + 120W Charge</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Power through two full days on a single charge. When you need a boost, the 120W HyperCharge brings your phone from 0 to 100% in under 18 minutes.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> 0 to 100% in 18 Minutes flat</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> 50W MagFast Wireless Charging</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Smart AI Health Engine (2000+ Cycles)</li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-6 glass-card rounded-3xl p-6 min-h-[350px] flex flex-col justify-center items-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-950/60 to-cyan-950/40 z-0"></div>
+                        <i class="fa-solid fa-bolt-lightning text-9xl text-emerald-400/20 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="relative z-10 text-center space-y-2 mt-4">
+                            <span class="text-2xl font-bold text-white">HyperCharge Tech</span>
+                            <p class="text-xs text-gray-400 max-w-sm">Dual-cell cooling protection prevents heating.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Specs Accordion Section -->
+    <section id="specs" class="py-20 relative z-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">Technical Specifications</h2>
+                <p class="text-3xl font-extrabold text-white">Every Detail, Uncompromisingly Specs-Driven.</p>
+            </div>
+
+            <div class="space-y-4" id="specs-accordion">
+                
+                <!-- Category 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-white/10">
+                    <button onclick="toggleAccordion('acc-1')" class="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-lg text-white hover:bg-white/5 transition-colors">
+                        <span class="flex items-center gap-3"><i class="fa-solid fa-microchip text-cyan-400"></i> Processor & Performance</span>
+                        <i id="acc-1-icon" class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div id="acc-1" class="hidden px-6 pb-6 text-sm text-gray-300 space-y-3 border-t border-white/5 pt-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div><span class="text-gray-500">Chipset:</span> Apex Quantum 3nm Octa-core</div>
+                            <div><span class="text-gray-500">GPU:</span> Apex Motion Turbo Ray-Tracing</div>
+                            <div><span class="text-gray-500">RAM:</span> 12GB / 16GB / 24GB LPDDR5X</div>
+                            <div><span class="text-gray-500">Storage Options:</span> 256GB / 512GB / 1TB UFS 4.1</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-white/10">
+                    <button onclick="toggleAccordion('acc-2')" class="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-lg text-white hover:bg-white/5 transition-colors">
+                        <span class="flex items-center gap-3"><i class="fa-solid fa-camera text-purple-400"></i> Camera System</span>
+                        <i id="acc-2-icon" class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div id="acc-2" class="hidden px-6 pb-6 text-sm text-gray-300 space-y-3 border-t border-white/5 pt-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div><span class="text-gray-500">Primary Rear:</span> 200MP OIS f/1.4</div>
+                            <div><span class="text-gray-500">Ultra-Wide:</span> 50MP 122° FOV</div>
+                            <div><span class="text-gray-500">Telephoto:</span> 50MP Periscope 10x Optical</div>
+                            <div><span class="text-gray-500">Front Camera:</span> 32MP TrueDepth 4K60</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-white/10">
+                    <button onclick="toggleAccordion('acc-3')" class="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-lg text-white hover:bg-white/5 transition-colors">
+                        <span class="flex items-center gap-3"><i class="fa-solid fa-wifi text-emerald-400"></i> Connectivity & OS</span>
+                        <i id="acc-3-icon" class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div id="acc-3" class="hidden px-6 pb-6 text-sm text-gray-300 space-y-3 border-t border-white/5 pt-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div><span class="text-gray-500">Network:</span> Dual SIM 5G mmWave + Sub-6GHz</div>
+                            <div><span class="text-gray-500">Wi-Fi:</span> Wi-Fi 7 (802.11be) Ready</div>
+                            <div><span class="text-gray-500">Bluetooth:</span> v5.4 Ultra-Low Latency</div>
+                            <div><span class="text-gray-500">OS:</span> ApexOS 4 based on Android 15</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Press & Reviews Section -->
+    <section id="reviews" class="py-20 relative z-10 bg-black/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">Critically Acclaimed</h2>
+                <p class="text-3xl font-extrabold text-white">What Tech Critics Are Saying</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Press 1 -->
+                <div class="glass-card rounded-2xl p-8 space-y-4">
+                    <div class="flex items-center text-amber-400 space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed italic">
+                        "The Apex One Ultra redefines smartphone camera expectations. The 200MP sensor combined with instant 120W charging makes it the smartphone to beat in 2026."
+                    </p>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="font-extrabold text-white text-base">TechCrunch</span>
+                        <span class="text-xs text-gray-400">Editor's Choice</span>
+                    </div>
+                </div>
+
+                <!-- Press 2 -->
+                <div class="glass-card rounded-2xl p-8 space-y-4">
+                    <div class="flex items-center text-amber-400 space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed italic">
+                        "Incredible thermal performance during heavy ray-tracing gaming. The titanium build quality is unmatched in ergonomics and durability."
+                    </p>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="font-extrabold text-white text-base">The Verge</span>
+                        <span class="text-xs text-cyan-400">9.8/10 Rating</span>
+                    </div>
+                </div>
+
+                <!-- Press 3 -->
+                <div class="glass-card rounded-2xl p-8 space-y-4">
+                    <div class="flex items-center text-amber-400 space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed italic">
+                        "The 3500 nits display is unbelievable under direct sun. Apex has officially delivered the premier flagship smartphone experience."
+                    </p>
+                    <div class="pt-4 border-t border-white/10 flex justify-between items-center">
+                        <span class="font-extrabold text-white text-base">Engadget</span>
+                        <span class="text-xs text-gray-400">Must Have</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Pre-Order Section -->
+    <section id="pricing" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">Choose Your Edition</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Pre-Order Pricing & Tiers</p>
+                <p class="text-gray-400 mt-4 text-sm">Reserve today to receive an exclusive complimentary Wireless Apex Buds Pro ($199 value).</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Tier 1: Apex One Standard -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-white/10 hover:border-cyan-500/30">
+                    <div>
+                        <div class="text-lg font-bold text-white mb-2">Apex One</div>
+                        <p class="text-xs text-gray-400 mb-6">Essential flagship power for power users.</p>
+                        <div class="flex items-baseline gap-1 mb-6">
+                            <span class="text-4xl font-extrabold text-white">$999</span>
+                            <span class="text-xs text-gray-400">USD</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 128GB Storage / 12GB RAM</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 50MP Main Camera System</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 6.5" ProMotion OLED 120Hz</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 67W Fast Charging</li>
+                        </ul>
+                    </div>
+                    <button onclick="openPreOrderModal('Apex One Standard', 999)" class="w-full py-3.5 rounded-xl glass-panel hover:bg-white/10 text-white font-bold transition-colors">
+                        Select Standard
+                    </button>
+                </div>
+
+                <!-- Tier 2: Apex One Pro (Featured) -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-2 border-cyan-500 relative bg-gradient-to-b from-cyan-950/30 to-purple-950/20 shadow-2xl shadow-cyan-500/10">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-black uppercase px-4 py-1.5 rounded-full tracking-wider shadow-lg">
+                        Most Popular
+                    </div>
+                    <div>
+                        <div class="text-lg font-bold text-white mb-2">Apex One Pro</div>
+                        <p class="text-xs text-gray-400 mb-6">The perfect balance of extreme camera and speed.</p>
+                        <div class="flex items-baseline gap-1 mb-6">
+                            <span class="text-4xl font-extrabold text-white">$1,199</span>
+                            <span class="text-xs text-gray-400">USD</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 256GB Storage / 16GB RAM</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 200MP Quad-Pro Camera</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 6.8" Super Retina OLED 120Hz</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-cyan-400"></i> 120W HyperCharge Included</li>
+                        </ul>
+                    </div>
+                    <button onclick="openPreOrderModal('Apex One Pro', 1199)" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:shadow-lg hover:shadow-cyan-500/20 text-white font-bold transition-all">
+                        Pre-Order Pro
+                    </button>
+                </div>
+
+                <!-- Tier 3: Apex One Ultra -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-white/10 hover:border-purple-500/30">
+                    <div>
+                        <div class="text-lg font-bold text-white mb-2">Apex One Ultra</div>
+                        <p class="text-xs text-gray-400 mb-6">Maximum performance and 1TB studio storage.</p>
+                        <div class="flex items-baseline gap-1 mb-6">
+                            <span class="text-4xl font-extrabold text-white">$1,399</span>
+                            <span class="text-xs text-gray-400">USD</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400"></i> 1TB Storage / 24GB Extreme RAM</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400"></i> 200MP Matrix + Titanium Frame</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400"></i> 6.8" 3500-Nit LTPO Display</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400"></i> Lifetime Cloud Storage Included</li>
+                        </ul>
+                    </div>
+                    <button onclick="openPreOrderModal('Apex One Ultra', 1399)" class="w-full py-3.5 rounded-xl glass-panel hover:bg-white/10 text-white font-bold transition-colors">
+                        Select Ultra
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="border-t border-white/10 py-12 relative z-10 bg-black/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-cyan-500 flex items-center justify-center font-bold text-white">A</div>
+                        <span class="text-lg font-bold text-white">APEX<span class="gradient-text">ONE</span></span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Pushing the boundaries of mobile tech innovation. Crafted for pioneers and digital visionaries.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4">Products</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Apex One Ultra</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Apex Buds Pro</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Apex SmartWatch X</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4">Support</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Pre-Order FAQ</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Trade-in Program</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Warranty & Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4">Connect</h4>
+                    <div class="flex space-x-4 text-gray-400 text-lg">
+                        <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 Apex Technologies Inc. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pre-Order Interactive Modal -->
+    <div id="preorder-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden transition-opacity duration-300">
+        <div class="glass-panel w-full max-w-xl rounded-3xl p-6 sm:p-8 relative border border-white/10 shadow-2xl overflow-y-auto max-h-[90vh]">
+            
+            <!-- Close Button -->
+            <button onclick="closePreOrderModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="mb-6">
+                <div class="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-1">Custom Configuration</div>
+                <h3 class="text-2xl font-extrabold text-white" id="modal-model-title">Pre-Order Apex One Pro</h3>
+            </div>
+
+            <!-- Modal Form Steps -->
+            <form id="preorder-form" onsubmit="handlePreOrderSubmit(event)" class="space-y-6">
+                
+                <!-- Color Choice Selection -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-3">1. Select Color Finish</label>
+                    <div class="grid grid-cols-4 gap-3">
+                        <button type="button" onclick="selectModalColor('Cyber Teal')" class="modal-color-btn p-3 rounded-2xl border border-cyan-500/50 bg-cyan-500/10 text-center text-xs text-white font-medium hover:border-cyan-400 active">
+                            <div class="w-6 h-6 rounded-full bg-cyan-400 mx-auto mb-1"></div>
+                            Teal
+                        </button>
+                        <button type="button" onclick="selectModalColor('Phantom Violet')" class="modal-color-btn p-3 rounded-2xl border border-white/10 bg-white/5 text-center text-xs text-white font-medium hover:border-purple-400">
+                            <div class="w-6 h-6 rounded-full bg-purple-500 mx-auto mb-1"></div>
+                            Violet
+                        </button>
+                        <button type="button" onclick="selectModalColor('Solar Gold')" class="modal-color-btn p-3 rounded-2xl border border-white/10 bg-white/5 text-center text-xs text-white font-medium hover:border-amber-400">
+                            <div class="w-6 h-6 rounded-full bg-amber-400 mx-auto mb-1"></div>
+                            Gold
+                        </button>
+                        <button type="button" onclick="selectModalColor('Stealth Obsidian')" class="modal-color-btn p-3 rounded-2xl border border-white/10 bg-white/5 text-center text-xs text-white font-medium hover:border-gray-400">
+                            <div class="w-6 h-6 rounded-full bg-gray-800 mx-auto mb-1"></div>
+                            Obsidian
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Storage Capacity Selection -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-3">2. Storage Upgrade</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <button type="button" onclick="selectStorage(0, '256GB')" class="modal-storage-btn p-3 rounded-xl border border-cyan-500 bg-cyan-500/10 text-white font-bold text-sm text-center">
+                            256GB
+                            <div class="text-[10px] text-gray-400 font-normal">Included</div>
+                        </button>
+                        <button type="button" onclick="selectStorage(100, '512GB')" class="modal-storage-btn p-3 rounded-xl border border-white/10 bg-white/5 text-white font-bold text-sm text-center">
+                            512GB
+                            <div class="text-[10px] text-gray-400 font-normal">+$100</div>
+                        </button>
+                        <button type="button" onclick="selectStorage(250, '1TB')" class="modal-storage-btn p-3 rounded-xl border border-white/10 bg-white/5 text-white font-bold text-sm text-center">
+                            1TB
+                            <div class="text-[10px] text-gray-400 font-normal">+$250</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trade-in Option Toggle -->
+                <div class="glass-card p-4 rounded-2xl border border-white/10 flex items-center justify-between">
+                    <div>
+                        <div class="text-sm font-bold text-white">Trade-in your old phone</div>
+                        <p class="text-xs text-gray-400">Save up to $400 instantly</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="tradein-toggle" onchange="toggleTradeIn()" class="sr-only peer">
+                        <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-500"></div>
+                    </label>
+                </div>
+
+                <!-- User Email Contact -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Reservation Email</label>
+                    <input type="email" required placeholder="you@domain.com" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-400 transition-colors">
+                </div>
+
+                <!-- Dynamic Total Price Summary -->
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                    <div>
+                        <div class="text-xs text-gray-400">Total Pre-Order Price:</div>
+                        <div class="text-2xl font-black text-cyan-400" id="modal-total-price">$1,199 USD</div>
+                    </div>
+                    <button type="submit" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:shadow-lg hover:shadow-cyan-500/20 text-white font-bold text-sm transition-all">
+                        Confirm Reservation
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Submission Confirmation Box (Hidden by default) -->
+            <div id="modal-success" class="hidden text-center py-8 space-y-4">
+                <div class="w-16 h-16 bg-cyan-500/20 text-cyan-400 rounded-full flex items-center justify-center text-3xl mx-auto">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white">Pre-Order Confirmed!</h3>
+                <p class="text-sm text-gray-300 max-w-sm mx-auto">
+                    Thank you for reserving your Apex One. A confirmation and pre-order receipt has been dispatched to your email.
+                </p>
+                <button onclick="closePreOrderModal()" class="px-6 py-2.5 rounded-xl glass-panel text-white text-sm font-semibold hover:bg-white/10">
+                    Close Window
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // State variables for pre-order calculations
+        let basePrice = 1199;
+        let selectedStorageAddon = 0;
+        let tradeInDiscount = 0;
+        let selectedColor = 'Cyber Teal';
+        let selectedStorageName = '256GB';
+
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Color Switcher Visualizer Engine
+        function changePhoneColor(colorKey) {
+            const phoneVisualizer = document.getElementById('phone-visualizer');
+            const screenBg = document.getElementById('phone-screen-bg');
+            const colorLabel = document.getElementById('phone-color-label');
+            const coreIcon = document.getElementById('phone-core-icon');
+            const glowOrb = document.getElementById('glow-orb');
+
+            // Reset active ring states on buttons
+            document.querySelectorAll('.color-btn').forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-offset-2', 'ring-offset-gray-950', 'ring-cyan-400');
+            });
+
+            // Apply selected button state
+            const targetBtn = document.querySelector(`.color-btn[data-color="${colorKey}"]`);
+            if (targetBtn) {
+                targetBtn.classList.add('ring-2', 'ring-offset-2', 'ring-offset-gray-950', 'ring-cyan-400');
+            }
+
+            // Theme transformations
+            switch (colorKey) {
+                case 'teal':
+                    phoneVisualizer.style.boxShadow = "0 25px 50px -12px rgba(0,0,0,0.8), 0 0 40px rgba(0, 242, 254, 0.25)";
+                    screenBg.className = "absolute inset-0 bg-gradient-to-br from-cyan-900/40 via-gray-950 to-purple-950/50 z-0 transition-all duration-700";
+                    colorLabel.textContent = "Cyber Teal Edition";
+                    colorLabel.className = "text-xs uppercase tracking-widest text-cyan-400 font-bold";
+                    coreIcon.className = "w-24 h-24 mx-auto rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-4xl shadow-2xl text-cyan-400 transform hover:scale-110 transition-transform cursor-pointer";
+                    glowOrb.className = "absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/20 rounded-full animate-pulse-glow pointer-events-none";
+                    break;
+                case 'purple':
+                    phoneVisualizer.style.boxShadow = "0 25px 50px -12px rgba(0,0,0,0.8), 0 0 40px rgba(168, 85, 247, 0.25)";
+                    screenBg.className = "absolute inset-0 bg-gradient-to-br from-purple-900/40 via-gray-950 to-pink-950/50 z-0 transition-all duration-700";
+                    colorLabel.textContent = "Phantom Violet Edition";
+                    colorLabel.className = "text-xs uppercase tracking-widest text-purple-400 font-bold";
+                    coreIcon.className = "w-24 h-24 mx-auto rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-4xl shadow-2xl text-purple-400 transform hover:scale-110 transition-transform cursor-pointer";
+                    glowOrb.className = "absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/20 rounded-full animate-pulse-glow pointer-events-none";
+                    break;
+                case 'gold':
+                    phoneVisualizer.style.boxShadow = "0 25px 50px -12px rgba(0,0,0,0.8), 0 0 40px rgba(245, 158, 11, 0.25)";
+                    screenBg.className = "absolute inset-0 bg-gradient-to-br from-amber-900/40 via-gray-950 to-orange-950/50 z-0 transition-all duration-700";
+                    colorLabel.textContent = "Solar Gold Edition";
+                    colorLabel.className = "text-xs uppercase tracking-widest text-amber-400 font-bold";
+                    coreIcon.className = "w-24 h-24 mx-auto rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-4xl shadow-2xl text-amber-400 transform hover:scale-110 transition-transform cursor-pointer";
+                    glowOrb.className = "absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/20 rounded-full animate-pulse-glow pointer-events-none";
+                    break;
+                case 'stealth':
+                    phoneVisualizer.style.boxShadow = "0 25px 50px -12px rgba(0,0,0,0.8), 0 0 40px rgba(100, 116, 139, 0.2)";
+                    screenBg.className = "absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black z-0 transition-all duration-700";
+                    colorLabel.textContent = "Stealth Obsidian Edition";
+                    colorLabel.className = "text-xs uppercase tracking-widest text-gray-300 font-bold";
+                    coreIcon.className = "w-24 h-24 mx-auto rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-4xl shadow-2xl text-white transform hover:scale-110 transition-transform cursor-pointer";
+                    glowOrb.className = "absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gray-500/10 rounded-full animate-pulse-glow pointer-events-none";
+                    break;
+            }
+        }
+
+        // 3. Feature Highlights Tab Switching
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.feature-tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Show selected content
+            const activeTab = document.getElementById(tabId);
+            if (activeTab) {
+                activeTab.classList.remove('hidden');
+            }
+
+            // Reset tab button styles
+            document.querySelectorAll('.feature-tab-btn').forEach(btn => {
+                btn.className = "feature-tab-btn px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 text-gray-400 hover:text-white";
+            });
+
+            // Style active tab button
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "feature-tab-btn px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 text-white bg-cyan-500/20 border border-cyan-500/40 shadow-lg";
+            }
+        }
+
+        // 4. Accordion Toggle Logic
+        function toggleAccordion(accId) {
+            const content = document.getElementById(accId);
+            const icon = document.getElementById(`${accId}-icon`);
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = "rotate(180deg)";
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = "rotate(0deg)";
+            }
+        }
+
+        // 5. Pre-Order Modal Logic & Price Calculations
+        function openPreOrderModal(modelName = 'Apex One Pro', price = 1199) {
+            basePrice = price;
+            selectedStorageAddon = 0;
+            tradeInDiscount = 0;
+
+            document.getElementById('modal-model-title').textContent = `Pre-Order ${modelName}`;
+            document.getElementById('preorder-form').classList.remove('hidden');
+            document.getElementById('modal-success').classList.add('hidden');
+            document.getElementById('tradein-toggle').checked = false;
+
+            updateTotalPrice();
+
+            const modal = document.getElementById('preorder-modal');
+            modal.classList.remove('hidden');
+        }
+
+        function closePreOrderModal() {
+            document.getElementById('preorder-modal').classList.add('hidden');
+        }
+
+        function selectModalColor(colorName) {
+            selectedColor = colorName;
+            const buttons = document.querySelectorAll('.modal-color-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('border-cyan-500/50', 'bg-cyan-500/10');
+                btn.classList.add('border-white/10', 'bg-white/5');
+            });
+            event.currentTarget.classList.remove('border-white/10', 'bg-white/5');
+            event.currentTarget.classList.add('border-cyan-500/50', 'bg-cyan-500/10');
+        }
+
+        function selectStorage(addonPrice, storageName) {
+            selectedStorageAddon = addonPrice;
+            selectedStorageName = storageName;
+
+            const buttons = document.querySelectorAll('.modal-storage-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('border-cyan-500', 'bg-cyan-500/10');
+                btn.classList.add('border-white/10', 'bg-white/5');
+            });
+            event.currentTarget.classList.remove('border-white/10', 'bg-white/5');
+            event.currentTarget.classList.add('border-cyan-500', 'bg-cyan-500/10');
+
+            updateTotalPrice();
+        }
+
+        function toggleTradeIn() {
+            const isChecked = document.getElementById('tradein-toggle').checked;
+            tradeInDiscount = isChecked ? 300 : 0;
+            updateTotalPrice();
+        }
+
+        function updateTotalPrice() {
+            const finalPrice = basePrice + selectedStorageAddon - tradeInDiscount;
+            document.getElementById('modal-total-price').textContent = `$${finalPrice.toLocaleString()} USD`;
+        }
+
+        function handlePreOrderSubmit(event) {
+            event.preventDefault();
+            document.getElementById('preorder-form').classList.add('hidden');
+            document.getElementById('modal-success').classList.remove('hidden');
+        }
+
+        // Initialize accordion defaults
+        window.onload = function() {
+            toggleAccordion('acc-1');
+        };
+    </script>
+</body>
+</html>
