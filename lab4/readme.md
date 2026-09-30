@@ -13,3 +13,21 @@
 6. create prg1.js in folder
 7. add folderName/node_moduoles in .gitignore\
 
+## map
+
+this function is use to iterate any array it must return new array
+
+
+syntax
+<!-- ``` 
+array.map((item)=>{
+   return
+})
+array.map((item)=>())
+
+``` -->
+we have to use explicit return keyword whereas in syntax 2 their is not.
+exclude number of properties from any json object .
+
+search :=
+to search any item in json array we use find method it will return NULL on umsuccessful all object on successfull v
