@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 app.get("/api/products", (req, res) => {
     const modiProducts = products.map(({ rewies, description, ...rest }) => rest,
     );
-    res.status(200).json({count:products.length,data:products})
+    res.status(200).json({count:modiProducts.length,data:products})
 });
 
 app.use((req, res) => {
